@@ -10,3 +10,6 @@ GET /api/v1/status/tsdb
     labelValueCountByLabelName: This will provide a list of the label names and their value count.
     memoryInBytesByLabelName This will provide a list of the label names and memory used in bytes. Memory usage is calculated by adding the length of all values for a given label name.
     seriesCountByLabelPair This will provide a list of label value pairs and their series count.
+
+PUSHGATEWAY push metric:
+echo "some_metric 3.14" | curl --data-binary @- http://localhost:9091/metrics/job/some_job
